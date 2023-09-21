@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 80rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #fdeaa8, #777);
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slider {
+    max-width: 62rem;
+    height: 42rem;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border: 0.3rem solid black;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 53rem 11rem;
+    padding: 0 1%;
+}
+
+input[name="radio"] {
+    visibility: hidden;
+}
+
+.buttons {
+    display: flex;
+    height: 2.5rem;
+    grid-column: 2/3;
+    justify-self: flex-end;
+    z-index: 100;
+    margin-top: -31rem;
+}
+
+.buttons__button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: grey;
+    cursor: pointer;
+    border: 0.7rem solid white;
+}
+
+.buttons__button:hover {
+    background-color: aqua;
+}
+
+.buttons__button:active {
+    background-color: yellow;
+}
+
+#img1 {
+    background-image: url(./mem1.png);
+}
+
+#img2 {
+    background-image: url(./mem2.png);
+}
+
+#img3 {
+    background-image: url(./mem3.png);
+}
+
+#img4 {
+    background-image: url(./mem4.png);
+}
+
+#img5 {
+    background-image: url(./mem5.png);
+}
+
+#img6 {
+    background-image: url(./mem6.png);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    transition: opacity 3s, visibility 3s;
+    opacity: 0;
+    overflow: hidden;
+    grid-row: 1/3;
+    grid-column: 1/3;
+    z-index: 1;
+}
+
+.slide__img {
+    width: 56.4rem;
+    height: 31.6rem;
+    align-self: center;
+}
+
+.slide__text {
+    width: 60%;
+    font-size: 1.6rem;
+    padding-top: 2rem;
+    background-color: white;
+}
+
+/* #slide1 {
+    opacity: 1;
+  } */
+
+#radio1:checked~#slide1 {
+    opacity: 1;
+}
+
+#radio1:checked~#buttons #label1 {
+    background-color: aqua;
+
+}
+
+#radio2:checked~#slide2 {
+    opacity: 1;
+}
+
+#radio2:checked~#buttons #label2 {
+    background-color: aqua;
+
+}
+
+#radio3:checked~#slide3 {
+    opacity: 1;
+}
+
+#radio3:checked~#buttons #label3 {
+    background-color: aqua;
+
+}
+
+#radio4:checked~#slide4 {
+    opacity: 1;
+}
+
+#radio4:checked~#buttons #label4 {
+    background-color: aqua;
+
+}
+
+#radio5:checked~#slide5 {
+    opacity: 1;
+}
+
+#radio5:checked~#buttons #label5 {
+    background-color: aqua;
+
+}
+
+#radio6:checked~#slide6 {
+    opacity: 1;
+}
+
+#radio6:checked~#buttons #label6 {
+    background-color: aqua;
+
+}
+
+@media (max-width: 623px) {
+    .slider {
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 49.5rem 14.5rem;
+        padding: 0 3%;
+    }
+
+    .slide {
+        padding-top: 1.5rem;
+    }
+
+    .slide__img {
+        width: 41.6rem;
+        height: 23.6rem;
+        background-size: contain;
+    }
+
+    .buttons {
+        grid-column: 1/3;
+        justify-self: center;
+        margin-top: -39rem;
+    }
+
+    .slide__text {
+        width: 100%;
+        padding-top: 5.7rem;
+        text-align: center;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 472px) {
+    .slider {
+        height: 36rem;
+    }
+
+    .slide__img {
+        width: 31rem;
+        height: 17.4rem;
+        background-size: contain;
+    }
+
+    .buttons {
+        margin-top: -45rem;
+    }
+
+    .slide__text {
+        margin-top: 4rem;
+    }
+}
+
+
+.slider__wrap {    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 26rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    perspective: 300rem;    
+}    
+.slider__text {
+    align-self: center;
+    margin-top: -8rem;
+    transition: all 0.3s ease;
+    transform: rotateX(40deg) rotateZ(5deg);
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 15rem;
+    letter-spacing: 1rem;
+    color: #f5f5f5;
+    text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1rem 1rem 1rem, #9c9c9c 1rem 2rem 1rem, #9c9c9c 1rem 3rem 1rem, #9c9c9c 1rem 4rem 1rem, #9c9c9c 1rem 5rem 1rem, #9c9c9c 1rem 6rem 1rem;
+}
+.slider__wrap:hover .slider__text{
+    margin-top: -2rem;
+    text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1rem 1rem 1rem, #9c9c9c 1rem 2rem 1rem, #9c9c9c 1rem 3rem 1rem, #9c9c9c 1rem 4rem 1rem, #9c9c9c 1rem 5rem 1rem, #9c9c9c 1rem 6rem 1rem;
+}
